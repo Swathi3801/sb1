@@ -55,19 +55,19 @@ jobs:
   docker:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-
-      - name: Log in to GitHub Container Registry
-        uses: docker/login-action@v2
-        with:
-          registry: ghcr.io
-          username: Swathi3801
-          password: ${{ secrets.GIT_HUB_TOKEN }}
-
-      - name: Build and Push Docker Image to GitHub Container Registry
-        run: |
-          docker build -t ghcr.io/swathi3801/sb1/sb1container:latest -f path/to/Dockerfile .
-          docker push ghcr.io/swathi3801/sb1/sb1container:latest
-        env:
-          DOCKER_BUILDKIT: 1
-
+    - uses: actions/checkout@v3
+    - name: Log in to GitHub Container Registry
+      uses: docker/login-action@v2
+      with:
+        registry: ghcr.io
+        username: Swathi3801
+        password: ${{ secrets.TOKEN_GITHUB }}
+    - name: Build and Push Docker Image to GitHub Container Registry
+      uses: docker/build-push-action@v2
+      with:
+       context: .
+       file: Dockerfile
+       push: true
+       tags: ghcr.io/Swathi3801/sb1 swathi3801container
+      env:
+        DOCKER_BUILDKIT: 1
