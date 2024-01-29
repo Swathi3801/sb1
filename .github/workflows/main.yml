@@ -68,7 +68,7 @@ jobs:
        context: .
        file: Dockerfile
        push: true
-       tags: ghcr.io/Swathi3801/sb1/sb1container
+       tags: ghcr.io/Swathi3801_lower/sb1/sb1container
       env:
         DOCKER_BUILDKIT: 1
 
