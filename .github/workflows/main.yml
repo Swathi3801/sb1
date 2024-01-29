@@ -69,6 +69,6 @@ jobs:
           file: Dockerfile
           push: true
           # Make sure the repository name is lowercase
-          tags: ghcr.io/${{ github.repository_owner }}/${{ env.REPOSITORY_NAME_LOWER }}swathicontainer:latest
+          tags: ghcr.io/${{ github.repository_owner }}/${{ env.REPOSITORY_NAME_LOWER }}swathicontainer
         env:
           DOCKER_BUILDKIT: 1
