@@ -61,14 +61,13 @@ jobs:
       with:
         registry: ghcr.io
         username: Swathi3801
-        password: ${{ secrets.GIT_HUB_TOKEN }}
+        password: ${{ secrets.TOKEN_GITHUB }}
     - name: Build and Push Docker Image to GitHub Container Registry
       uses: docker/build-push-action@v2
       with:
        context: .
        file: Dockerfile
        push: true
-        tags:|
-          ghcr.io/Swathi3801/sb1:swathi3801container
+       tags: ghcr.io/Swathi3801/sb1:swathi3801container
       env:
         DOCKER_BUILDKIT: 1
