@@ -66,7 +66,7 @@ jobs:
 
       - name: Build and Push Docker Image to GitHub Container Registry
         run: |
-          docker build -t ghcr.io/swathi3801/sb1/sb1container:latest .
+          docker build -t ghcr.io/swathi3801/sb1/sb1container:latest -f path/to/Dockerfile .
           docker push ghcr.io/swathi3801/sb1/sb1container:latest
         env:
           DOCKER_BUILDKIT: 1
